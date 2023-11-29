@@ -16,7 +16,7 @@ class Movie extends Production
 
     public function set_profit($_profit)
     {
-        $formatted_profit = number_format($_profit, 2);
+        $formatted_profit = number_format($_profit);
         $this->profit = "$" . $formatted_profit;
     }
 
