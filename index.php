@@ -7,13 +7,15 @@ class Production
     public $rating;
     public $recommended;
     public $poster;
+    public $id;
 
-    function __construct(string $_title, string $_lang, float $_rating, float $_id)
+    function __construct(string $_title, string $_lang, float $_rating, int $_id)
     {
         $this->title = $_title;
         $this->lang = $_lang;
         $this->rating = $_rating;
         $this->set_recommended($_rating);
+        $this->id = $_id;
         $this->set_poster($_id);
     }
 
