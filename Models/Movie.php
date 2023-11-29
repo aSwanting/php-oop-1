@@ -27,11 +27,24 @@ class Movie extends Production
 
     public function set_duration($_duration)
     {
-        $this->duration = $_duration;
+        $this->duration = $_duration . " minutes";
     }
 
     public function get_duration()
     {
         return $this->duration;
+    }
+
+    public function print_properties()
+    {
+        parent::print_properties();
+        $props = [
+            "Profit" => $this->get_profit(),
+            "Duration" => $this->get_duration(),
+        ];
+
+        foreach ($props as $key => $prop) {
+            echo "<li class='list-group-item'> <span class='fw-medium'>{$key}: </span>{$prop}</li>";
+        }
     }
 }
