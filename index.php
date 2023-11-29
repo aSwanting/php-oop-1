@@ -41,14 +41,28 @@ $productions = [
                 <?php foreach ($productions as $prod) { ?>
 
                     <div class="card grid-item shadow">
+
                         <div class="card-header">
                             <h2 class="fs-4 text-center fw-semibold"> <?= $prod->get_title() ?> </h2>
                         </div>
+
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"> <span class="fw-medium">Language: </span><?= $prod->get_lang() ?> </li>
                                 <li class="list-group-item"> <span class="fw-medium">Rating: </span><?= $prod->get_rating() ?> / 10</li>
                                 <li class="list-group-item"> <span class="fw-medium">Recommendation: </span><?= $prod->get_recommended() ?> </li>
+
+                                <?php if (get_class($prod) == "Movie") { ?>
+
+                                    <li class="list-group-item"> <span class="fw-medium">Profit: </span><?= $prod->get_profit() ?> </li>
+                                    <li class="list-group-item"> <span class="fw-medium">Duration: </span><?= $prod->get_duration() ?> minutes</li>
+
+                                <?php } else if (get_class($prod) == "Series") { ?>
+
+                                    <li class="list-group-item"> <span class="fw-medium">Seasons: </span><?= $prod->get_season() ?> </li>
+
+                                <?php } ?>
+
                             </ul>
                         </div>
 
