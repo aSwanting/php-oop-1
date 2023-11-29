@@ -1,0 +1,15 @@
+.app-main {
+  background: linear-gradient(149deg, #2d9ab2, #7c9171);
+  height: 100vh;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grid-item {
+  /* padding: 20px;
+  background-color: red; */
+}
