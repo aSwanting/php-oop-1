@@ -1,0 +1,12 @@
+<?php
+trait CodeToHTML
+{
+    public function get_assoc_as_bootstrap_list_item($assoc_array)
+    {
+        $bootstrap_list_item = [];
+        foreach ($assoc_array as $key => $value) {
+            $bootstrap_list_item[] = "<li class='list-group-item'> <span class='fw-medium'>{$key}: </span>{$value}</li>";
+        }
+        return $bootstrap_list_item;
+    }
+}

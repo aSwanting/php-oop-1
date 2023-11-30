@@ -35,16 +35,11 @@ class Movie extends Production
         return $this->duration;
     }
 
-    public function print_properties()
+    public function get_props_as_assoc()
     {
-        parent::print_properties();
-        $props = [
-            "Profit" => $this->get_profit(),
-            "Duration" => $this->get_duration(),
-        ];
-
-        foreach ($props as $key => $prop) {
-            echo "<li class='list-group-item'> <span class='fw-medium'>{$key}: </span>{$prop}</li>";
-        }
+        $props = parent::get_props_as_assoc();
+        $props["Profit"] = $this->get_profit();
+        $props["Duration"] = $this->get_duration();
+        return $props;
     }
 }

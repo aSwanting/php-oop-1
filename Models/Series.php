@@ -22,13 +22,10 @@ class Series extends Production
         return $this->seasons;
     }
 
-    public function print_properties()
+    public function get_props_as_assoc()
     {
-        parent::print_properties();
-        $props = ["Seasons" => $this->get_seasons(),];
-
-        foreach ($props as $key => $prop) {
-            echo "<li class='list-group-item'> <span class='fw-medium'>{$key}: </span>{$prop}</li>";
-        }
+        $props = parent::get_props_as_assoc();
+        $props["Seasons"] = $this->get_seasons();
+        return $props;
     }
 }

@@ -17,8 +17,6 @@ $productions = [
     $series05 = new Series("Sacred Games", "Hindi", 8.6, 2),
 ];
 
-// var_dump($productions);
-
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +47,7 @@ $productions = [
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
 
-                                <?= $prod->print_properties() ?>
+                                <?= implode($prod->get_assoc_as_bootstrap_list_item($prod->get_props_as_assoc())) ?>
 
                             </ul>
                         </div>

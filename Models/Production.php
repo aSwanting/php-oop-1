@@ -1,7 +1,11 @@
 <?php
 
+require_once __DIR__ . "/../traits/CodeToHTML";
+
 class Production
 {
+    use CodeToHTML;
+
     private $title;
     private $lang;
     private $rating;
@@ -77,16 +81,14 @@ class Production
         return $this->recommended;
     }
 
-    public function print_properties()
+    public function get_props_as_assoc()
     {
         $props = [
+            "Original Title" => $this->get_title(),
             "Language" => $this->get_lang(),
             "Rating" => $this->get_rating(),
             "Recommendation" => $this->get_recommended()
         ];
-
-        foreach ($props as $key => $prop) {
-            echo "<li class='list-group-item'> <span class='fw-medium'>{$key}: </span>{$prop}</li>";
-        }
+        return $props;
     }
 }
